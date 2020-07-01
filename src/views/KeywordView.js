@@ -1,5 +1,6 @@
 import View from "./View.js";
 import "./KeywordView.scss";
+import success from "../images/success.png";
 
 export default class KeywordView extends View {
   constructor(el) {
@@ -24,6 +25,11 @@ export default class KeywordView extends View {
   getKeywordsHtml(data) {
     return (
       data.reduce((html, item, index) => {
+        if (data.length === index + 1) {
+          html += `<p>해당 화면이 보인다면 손들어 주세요!!</p>`;
+          html += `<img src="${success}"/>`;
+          return html;
+        }
         html += `<li data-keyword="${
           item.keyword
         }"><span class="number">${index + 1}</span>${item.keyword}</li>`;

@@ -29,9 +29,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm run server_install && npm run server && webpack-dev-server --progress",
-    "server": "node-env-run server --exec nodemon &",
-    "server_install": "cd ./server && npm install" ,
+    "start": "webpack-dev-server --progress",
     "build": "NODE_ENV=production webpack --progress",
     "lint": "eslint src --fix"
   },
